@@ -186,7 +186,7 @@ const Contact = () => {
                             </div>
                         </div>
                         <ReCAPTCHA
-                            sitekey={process.env.APP_SECRET_KEY}
+                            sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
                             size="invisible"
                             ref={captchaRef}
                         />
