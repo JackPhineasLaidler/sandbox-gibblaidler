@@ -1,0 +1,101 @@
+.navigation-bar {
+    width: 100%;
+    @extend %margins;
+
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        height: 100%;
+        padding-top: 25px;
+        cursor: pointer;
+
+        @include respond-to(md) {
+            display: none;
+        }
+
+        span {
+            height: 5px;
+            background: var(--navigationMenuColour);
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%);
+
+
+            &:first-child {
+                margin-bottom: 5px;
+                width: 52px
+            }
+
+            &:last-child {
+                margin-top: 5px;
+                width: 38px;
+            }
+        }
+    }
+
+    &__inner {
+        @extend %max-widths;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #D7D7D7;
+    }
+
+    
+    img {
+        height: 53px;
+        margin-top: 13px;
+        margin-bottom: 4px;
+        width: 84px;
+
+        @include respond-to(md) {
+            height: 55px;
+            margin-bottom: 5px;
+            margin-top: 15px;
+            width: 87px;
+
+        }
+
+        @include respond-to(lg) {
+            height: 57px;
+            width: 90px;
+        }
+    }
+
+    ul {
+        display: none;
+        font-family: var(--themeFontFamilySecondary);
+
+        @include respond-to(md) {
+            display: flex;
+            align-items: center;
+        }
+
+        li {
+            list-style: none;
+            padding-left: 0;
+            a {
+                text-decoration-color: transparent;
+                font-weight: var(--themeTextWeight);
+                color: var(--themeLinkTextColour);
+                font-size: 18px;
+                line-height: 18px;
+                cursor: pointer;
+            
+                &:hover {
+                    text-decoration-color: var(--themeLinkTextColour);
+                    text-decoration: underline;
+                    text-underline-offset: 6px;
+                    text-decoration-thickness: 1px;
+                }
+            }
+
+            @include respond-to(md) {
+                margin-left: 25px;
+            }
+
+            @include respond-to(lg) {
+                margin-left: 40px;
+            }
+        }
+    } 
+}

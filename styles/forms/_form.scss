@@ -1,0 +1,140 @@
+form {
+
+    &.hidden {
+        display: none;
+        visibility: visible;
+
+        @include respond-to(lg) {
+            visibility: hidden;
+            display: block;
+        }
+    }
+
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 30px;
+    
+    
+        .input-field {
+            width: 100%;
+            font-family: var(--themeFontFamilySecondary);
+            margin-top: 22px;
+            position: relative;
+
+            @include respond-to(md) {
+                max-width: calc(50% - 15px);
+    
+                &:last-of-type {
+                    max-width: 100%;
+                }
+
+                &--margin {
+                    margin-right: calc(50% + 15px);
+                }
+            
+
+            }
+
+            &--error {
+                margin-top: 0;
+
+                .error-message {
+                    display: block;
+                }
+            }
+    
+            label {
+                font-style: normal;
+                font-weight: var(--inputLabelFontWeight);
+                font-size: 17px;
+                letter-spacing: -0.05rem;
+                color: var(--inputLabelColour);
+
+                &:after {
+                    content: '*';
+                    color: var(--inputErrorColour);
+                }
+            }
+    
+            input[type="text"], select, textarea {
+                border: 2px solid var(--inputBorderColour);
+                border-radius: 4px;
+                width: 100%;
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-top: 13px;
+                padding-bottom: 13px;
+                font-size: 18px;
+                color: var(--themeTextColour);
+                display: flex;
+                flex-direction: column;
+                margin-top: 8px;
+                font-family: var(--themeFontFamilySecondary);
+                line-height: 24px;
+    
+                &:focus, &:focus-visible  {
+                    border: 2px solid var(--inputBorderColourActive);
+                    outline: 0;
+                }
+    
+                &::placeholder {
+                    font-family: var(--themeFontFamilySecondary);
+                    font-weight: var(--themeTextWeight);
+                    color: var(--inputPlaceholderColour);
+                }
+            }
+
+            select {
+                font-family: var(--themeFontFamilySecondary);
+                font-weight: var(--themeTextWeight);
+                color: var(--inputPlaceholderColour);
+                appearance: none;
+                background-repeat: no-repeat;
+                background-image: url('../../public/icons/dropdown-arrow.svg');
+                background-position: right 14px top 50%;
+                background-size: 18px auto;
+
+                &[data-is-selected=true]  {
+                    color: var(--themeTextColour);
+                }
+
+                option {
+                    color: var(--themeTextColour);
+                }
+            }
+        }
+
+        .error-message {
+            display: none;
+            height: 16px;
+            margin-top: 6px;
+            color: var(--inputErrorColour);
+            font-size: 16px;
+        }
+    
+    }
+
+    button {
+        margin-top: 40px;
+        float: right;
+    }
+}
+
+.contact-form {
+    position: relative;
+
+    &__response {
+        &.hidden {
+            display: none;
+        }
+
+        @include respond-to(lg) {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            display: block;
+        }
+    }
+}

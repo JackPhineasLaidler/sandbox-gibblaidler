@@ -1,0 +1,22 @@
+$breakpoints: (
+  'xs':  ( max-width:  330px ), //HANDLE VERY SMALL SCREENS
+  'sm':  ( min-width:  576px ),
+  'md': ( min-width:  768px ),
+  'lg':  ( min-width: 992px ),
+  'xl':  ( min-width: 1280px ),
+  'xxl':  ( min-width: 1560px ), //HANDLE VERY LARGE SCREENS
+
+
+) !default;
+
+// Mixin to manage responsive breakpoints
+// @author Kitty Giraudel
+@mixin respond-to($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media #{inspect(map-get($breakpoints, $breakpoint))} {
+        @content;
+      }
+    }
+  }

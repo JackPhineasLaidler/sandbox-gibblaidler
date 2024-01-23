@@ -1,0 +1,54 @@
+%default-list-styles {
+    font-size: 17px;
+    line-height: 27px;
+    color: var(--themeTextColour);
+    font-family: var(--themeFontFamilySecondary);
+
+    &:not(:last-child) {
+        margin-bottom: 18px;
+    }
+
+    @include respond-to(xl) {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+
+
+ul {
+    list-style: none;
+    padding-left: 0;
+
+    &.list-style-none {
+        li {
+            @extend %default-list-styles;
+        }
+    }
+
+    &.list-style-disc {
+        padding-left: 20px;
+        list-style: disc;
+        li {
+            @extend %default-list-styles;
+        }
+    }
+
+    + h4, + .heading--medium {
+        margin-top: 38px;
+    }
+}
+
+ol {
+    padding-left: 20px;
+    list-style-position: outside;
+
+    li {
+        padding-left: 10px;
+        @extend %default-list-styles;
+    }
+
+    + h4, + .heading--medium {
+        margin-top: 40px;
+    }
+}

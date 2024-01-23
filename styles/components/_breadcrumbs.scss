@@ -1,0 +1,65 @@
+.breadcrumbs {
+    @extend %margins;
+    display: none;
+    opacity: .85;
+
+    @include respond-to(md) {
+        display: block;
+    }
+
+    + .stripe {
+        @include respond-to(lg) {
+            padding-top: 60px;
+        }
+
+        @include respond-to(xl) {
+            padding-top: 70px;
+        }
+    }
+
+    ul {
+        @extend %max-widths;
+        display: flex;
+
+        li {
+            font-family: var(--themeFontFamilySecondary);
+            font-weight: 400;
+            font-size: 18px;
+            margin-top: 20px;
+            letter-spacing: -0.05rem;
+            color: var(--themeTextColour);
+
+            &:first-letter {
+                text-transform: capitalize;
+            }
+
+            &:not(:last-of-type) {
+                display: inline-flex;
+                align-items: center;
+
+                &:after {
+                    content: "";
+                    background-size: 13px;
+                    height: 13px;
+                    background-image: var(--themeLinkArrow);
+                    background-repeat: no-repeat;
+                    margin-right: 13px;
+                    margin-left: 13px;
+                    width: 13px;
+                }
+            }
+
+            &:last-of-type {
+                margin-top: 22px;
+            }
+
+            a {
+                text-underline-offset: 2px;
+
+                &:first-letter {
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}

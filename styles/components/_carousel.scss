@@ -1,0 +1,101 @@
+.carousel {
+    overflow: hidden;
+
+    &__container {
+      position: relative;
+
+    }
+
+    &__slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        overflow-y: hidden;
+
+        @include respond-to(md) {
+            background-image: linear-gradient(var(--themeBackgroundColourSecondary), var(--themeBackgroundColourSecondary));
+            background-size: 1px 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        &::-webkit-scrollbar { //remove scrollbar
+            max-height: 8px;
+            height: 0px;
+          }
+          
+          &::-webkit-scrollbar-track { //styles in case scrollbar is shown
+            background: rgba(0, 0, 0, 0.08);
+            border-radius: 6px;
+          }
+          
+          &::-webkit-scrollbar-thumb { //styles in case scrollbar is shown
+            background: var(--themeBackgroundColourSecondary);
+            border-radius: 6px;
+            cursor: pointer;
+          }
+    }
+
+    &__arrow {
+        height: 38px;
+        width: 38px;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+        background-color: #59616e;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: -60px;
+        outline: none;
+        border: 0;
+        transition: .3s ease;
+        padding: 0;
+
+        @include respond-to(sm) {
+          bottom: -50px;
+        }
+
+        @include respond-to(md) {
+          top: -60px;
+        }
+
+        @include respond-to(lg) {
+          top: -70px;
+        }
+
+        @include respond-to(xl) {
+          top: -80px;
+        }
+
+        &:hover {
+          background-color: var(--themeBackgroundColour);
+        }
+
+        &:active {
+          opacity: .2;
+        }
+        
+        &:after {
+          background-repeat: no-repeat;
+          content: '';
+          background-size: 22px;
+          background-image: var(--themeLinkArrow);
+          width: 22px;
+          height: 21px;
+        }
+
+        &:disabled {
+          pointer-events: none;
+          opacity: .3;
+        }
+        
+        &--left {
+            right: 60px;
+            &:after {
+              transform: rotate(180deg)            
+            }
+        };
+    }
+}

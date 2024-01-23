@@ -1,0 +1,80 @@
+.bttn {
+    background: var(--buttonBackgroundColour);
+    text-align: center;
+    font-weight: var(--buttonFontWeight);
+    font-size: 20px;
+    color: var(--buttonTextColour) !important;
+    text-decoration: none;
+    padding: 17px 42px;
+    cursor: pointer;
+    transition: .2s ease-in;
+    position: relative;
+    border: 0;
+
+    &--loading {
+        opacity: 0.7;
+            span {
+                &:after {
+                    content: '.';
+                    animation: dots 1s steps(5, end) infinite;
+                 }
+            }
+
+    }
+
+    &:after {
+        background-image: var(--whiteArrow);
+        content: '';
+        width: 22px;
+        position: absolute;
+        height: 22px;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: .2s ease-in;
+        right: 12px;
+        display: flex;
+        top: 38%;
+    }
+
+    &:active {
+        background:var(--buttonActiveColour);
+    }
+
+    &:hover {
+        transition: .2s ease-in;
+        padding-left: 32px;
+        padding-right: 52px;
+
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+}
+
+
+@keyframes dots {
+    0%, 20% {
+      color: rgba(0,0,0,0);
+      text-shadow:
+        .25em 0 0 rgba(0,0,0,0),
+        .5em 0 0 rgba(0,0,0,0);}
+    40% {
+      color: white;
+      text-shadow:
+        .25em 0 0 rgba(0,0,0,0),
+        .5em 0 0 rgba(0,0,0,0);}
+    60% {
+      text-shadow:
+        .25em 0 0 white,
+        .5em 0 0 rgba(0,0,0,0);}
+    80%, 100% {
+      text-shadow:
+        .25em 0 0 white,
+        .5em 0 0 white;
+    }
+}

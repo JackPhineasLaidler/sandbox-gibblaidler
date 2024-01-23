@@ -1,0 +1,204 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border-radius: 4px;
+
+    &--centered {
+        justify-content: center;
+    }
+
+    &:not(.card--clear) {
+        padding: 25px;
+        background: var(--cardBackgroundColour);
+
+        @include respond-to(lg) {
+            padding: 30px;
+        }
+    }
+
+    &__icon {
+        border-radius: 2px;
+        height: 42px;
+        width: 42px;
+        background: var(--cardIconColour);
+        margin-bottom: 15px;
+
+        @include respond-to(lg) {
+            height: 47px;
+            width: 47px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &--clear {
+        background: var(--themeBackgroundColour);
+    }
+
+    &__content, p {
+        font-size: 16px;
+        line-height: 23px;
+        flex: 1;
+        font-family: var(--themeFontFamilySecondary);
+        font-weight: var(--themeTextWeight);
+        color: var(--themeTextColour);
+
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        @include respond-to(lg) {
+            font-size: 17px;
+            line-height: 24px;
+
+            &:not(:last-child) {
+                margin-bottom: 18px;
+            }
+        }
+
+        @include respond-to(xl) {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    a {
+        align-self: flex-start
+    }
+
+    .team__section & {
+        max-width: 280px;
+        width: 100%;
+        cursor: pointer;
+        padding: 30px;
+        height: 100%;
+        transition: .2s ease;
+        margin:auto;
+
+        @include respond-to(sm) {
+            padding: 30px 15px;
+            margin:0;
+        }
+
+        @include respond-to(lg) {
+            padding: 50px 25px;
+            max-width: 340px;
+
+        }
+
+        &:hover {
+            background: var(--themeBackgroundColour);
+
+            span.team__section__item__image-placeholder {
+                background: var(--themeBackgroundColourSecondary);
+            }
+        }
+    }
+
+    .heading--medium {
+        margin-bottom: 10px;
+        text-transform: capitalize;
+        @include respond-to(lg) {
+            margin-bottom: 12px;
+        }
+    }
+
+
+    .card__carousel & {
+        height: 100%;
+    }
+
+    &__carousel {
+        &:not(:last-child) {
+            padding-right: 16px;
+            min-width: calc(100% + 16px);
+
+            @include respond-to(md) {
+                padding-right:  60px;
+                min-width: calc(50% + 30px);
+            }
+    
+            @include respond-to(lg) {
+                padding-right:  80px;
+                min-width: calc(50% + 40px);
+            }
+    
+            @include respond-to(xl) {
+                padding-right: 120px;
+                min-width: calc(50% + 60px);
+            }
+        }
+
+        &:last-child {
+            min-width: 100%;
+
+            @include respond-to(md) {
+                min-width: 50%;
+                min-width: calc(50% - 30px);
+            }
+
+            @include respond-to(lg) {
+                min-width: calc(50% - 40px);
+            }
+
+            @include respond-to(xl) {
+                min-width: calc(50% - 60px);
+            }
+        }
+    }
+
+    &__testimonial {
+        p {
+            font-style: italic;
+        }
+
+        &__footer {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            img {
+                padding: 5px;
+                background-color: var(--white);
+                border-radius: 2px;
+                height: 48px;
+                width: 48px;
+            }
+
+            > div {
+                margin-left: 18px;
+
+                span {
+                    color: var(--themeTextColourSecondary);
+                    display: block;
+                    font-family: var(--themeFontFamilySecondary);
+
+                    &:first-child {
+                        font-weight: var(--themeHeadingWeight);
+                        font-size: 18px;
+                        margin-bottom: 8px;
+                        line-height: 23px;
+
+                        @include respond-to(md) {
+                            font-size: 16px;
+                            margin-bottom: 5px;
+                            line-height: 20px;
+                        }
+
+                        @include respond-to(xl) {
+                            font-size: 18px;
+                            margin-bottom: 8px;
+                            line-height: 23px;
+                        }
+                    }
+
+                    &:last-child {
+                        font-size: 16px;
+                        font-weight: var(--themeTextWeight);
+                    }
+                }
+            }
+        }
+    }
+}
