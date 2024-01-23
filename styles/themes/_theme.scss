@@ -1,0 +1,94 @@
+:root {
+
+    --white: #ffff;
+    --offWhite: #FEFEFE;
+    --greyLightest: #F5F5F5;
+    --greyLight: #EFEFF1;
+    --grey: #E6E6E6;
+    --greyDark: #485259;
+    --black: #21303C;
+    --charcoal: #343A3F;
+    --gold: #E0D0AF;
+    --errorRed: #DD4F4F;
+    --navy: #404C61;
+    --navyDark: #394352;
+    --navyDarkest: #2D3544;
+    --blue: #4B7991;
+
+    --whiteArrow: url('../../public/icons/arrow--white.svg');
+    --blackArrow: url('../../public/icons/arrow--black.svg');
+
+    --buttonBackgroundColour: var(--navyDarkest);
+    --buttonTextColour: var(--white);
+    --buttonActiveColour: var(--greyDark);
+    --buttonFontWeight: 400;
+
+    --themeBackgroundColour: var(--offWhite);
+    --themeBackgroundColourSecondary: var(--greyLight);
+    --themeHeadingWeight: 600;
+    --themeLinkArrowFontWeight: 600;
+    --themeTextWeight: 400;
+    --themeTextWeightBold: 800;
+    --themeTextColour: var(--charcoal);
+    --themeTextColourSecondary: var(--themeTextColour);
+    --themeLinkTextColour: var(--black);
+    --themeLinkUnderlineColour: var(--charcoal);
+    --themeFontFamily: 'Faustina', 'sans-serif';
+    --themeFontFamilySecondary: 'Epilogue', 'sans-serif';
+    --themeLinkArrow: var(--blackArrow);
+    --themeLinkArrowSecondary: var(--whiteArrow);
+    --cardBackgroundColour: var(--themeBackgroundColourSecondary);
+    --cardIconColour: var(--white);
+    --arrowLinkUnderlineWidth: 2px;
+
+    --inputBorderColour: #C4CCCF;
+    --inputBorderColourActive: #60636C;
+    --inputPlaceholderFontWeight: 400;
+    --inputLabelFontWeight: 400;
+    --inputPlaceholderColour: rgba(98, 104, 122, 0.5);
+    --inputLabelColour: #62687A;
+    --inputErrorColour: var(--errorRed);
+}
+
+.stripe {
+    background-color: var(--themeBackgroundColour);
+
+    &--secondary {
+        --themeBackgroundColour: var(--navy);
+        --themeBackgroundColourSecondary: var(--white);
+        --cardBackgroundColour: var(--black);
+        --themeTextColour: var(--white);
+        --themeTextWeight: 300;
+        --themeHeadingWeight: 500;
+        --themeTextWeightBold: 700;
+        --themeTextColourSecondary: var(--grey);
+        --themeLinkTextColour: var(--themeTextColour);
+        --themeLinkArrow: var(--whiteArrow);
+        --cardBackgroundColour: var(--navyDarkest);
+        --arrowLinkUnderlineWidth: 1px;
+    }
+
+    &--tertiary {
+        --themeBackgroundColour: var(--greyLightest);
+        --themeBackgroundColourSecondary: var(--charcoal);
+    }
+
+    &--quaternary {
+        @extend .stripe--secondary;
+        --themeBackgroundColour: var(--navyDark);
+    }
+}
+
+footer {
+    --footerBackgroundColour: var(--navyDark);
+    --themeLinkTextColour: var(--white);
+    --themeTextColour: #EBECEE;
+    --themeTextWeight: 300;
+    --themeHeadingWeight: 500;
+    --themeTextWeightBold: 700;
+}
+
+.navigation-bar {
+    --themeTextWeight: 500;
+    --navigationMenuColour: var(--greyDark);
+}

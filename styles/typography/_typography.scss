@@ -1,0 +1,134 @@
+h1:not(.site-hero) {
+    font-family: var(--themeFontFamily);
+    font-size: 48px;
+    line-height: 50px;
+    color: var(--themeTextColour);
+    font-style: normal;
+    font-weight: var(--themeHeadingWeight);
+    margin-bottom: 36px;
+    max-width: 700px;
+    
+    @include respond-to(lg) {
+        font-size: 52px;
+        line-height: 54px;
+    }
+}
+
+
+h2 {
+    font-family: var(--themeFontFamily);
+    font-weight: var(--themeHeadingWeight);
+    font-size: 36px;
+    line-height: 40px;
+    color: var(--themeTextColour);
+    margin-bottom: 22px;
+
+    @include respond-to(lg) {
+        font-size: 42px;
+        line-height: 50px;
+        margin-bottom: 24px;
+    }
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 24px;
+    font-weight: var(--themeHeadingWeight);
+    font-family: var(--themeFontFamily);
+    color: var(--themeTextColour);
+
+    @include respond-to(lg) {
+        font-size: 36px;
+        line-height: 34px;
+        margin-bottom: 33px;
+    }
+
+    .card & {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 20px;
+
+        @include respond-to(lg) {
+            font-size: 27px;
+            line-height: 34px;
+        }
+    }
+}
+
+h4, .heading--medium {
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: var(--themeHeadingWeight);
+    font-family: var(--themeFontFamily);
+    color: var(--themeTextColour);
+    margin-bottom: 20px;
+
+    @include respond-to(lg) {
+        font-size: 28px;
+        line-height: 34px;
+        margin-bottom: 24px;
+    }
+}
+
+h5, .heading--small {
+    font-family: var(--themeFontFamilySecondary);
+    font-weight: var(--themeHeadingWeight);
+    font-size: 20px;
+    line-height: 22px;
+    color: var(--themeTextColour);
+    margin-bottom: 20px;
+    display: block;
+}
+
+
+p {
+    font-family: var(--themeFontFamilySecondary);
+    font-weight: var(--themeTextWeight);
+    font-size: 17px;
+    line-height: 27px;
+    color: var(--themeTextColour);
+
+    &:not(:last-child) {
+        margin-bottom: 23px;
+    }
+
+    @include respond-to(xl) {
+        font-size: 19px;
+        line-height: 30px;
+    }
+
+    + .arrow-link {
+        margin-top: 10px;
+    }
+
+    + ul {
+        margin-top: 40px;
+    }
+}
+
+
+b {
+    font-weight: var(--themeHeadingWeight);
+}
+
+
+a {
+    text-decoration: underline;
+    color: var(--themeTextColour);
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
+.constrain {
+    max-width: 985px;
+}
+
+.text-centered {
+    text-align: center;
+    margin: auto;
+}

@@ -1,0 +1,199 @@
+footer {
+    background-color: var(--footerBackgroundColour);
+    text-align: center;
+    margin-top: auto;
+    
+    @include respond-to(md) {
+        text-align: left;
+    }
+
+    .site-footer {
+        padding-top: 90px;
+        padding-bottom: 70px;
+        margin-top: auto;
+        @extend %margins;
+
+        @include respond-to(md) {
+            padding-top: 45px;
+            padding-bottom: 45px;
+        }
+
+        &__inner {
+            @extend %max-widths;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+
+            @include respond-to(md) {
+                flex-direction: row;
+                gap: 45px;
+            }
+
+            @include respond-to(lg) {
+                gap: 120px;
+            }
+    
+            @include respond-to(xl) {
+                gap: 170px;
+            }
+
+            @include respond-to(xl) {
+                gap: 220px;
+            }
+
+
+            &:not(.footer__legal) {
+                align-items: center;
+
+                @include respond-to(md) {
+                    align-items: center;
+                }
+            }
+        }
+
+        &__category-title {
+            @extend h5;
+        }
+
+        &__legal {
+            font-size: 11px;
+            font-weight: 300;
+            font-family: 'Epilogue';
+            line-height: 15px;
+            background: rgba(0, 0, 0, 0.25);
+            padding-top: 12px;
+            padding-bottom: 12px;
+            @extend %margins;
+            color: #c7c7c7;
+        }
+
+
+
+        img {
+            margin-left: 10px;
+            cursor: pointer;
+            height: 50px;
+            width: 79px;
+            margin-bottom: 16px;
+
+            @include respond-to(md) {
+                margin-left: 0px;
+            }
+        }
+
+        &__contact-info {
+            font-family: var(--themeFontFamilySecondary);
+            color: var(--themeTextColour);
+            font-weight: var(--themeTextWeight);
+
+            span {
+                display: block;
+                line-height: 22px;
+                margin-bottom: 20px;
+
+                @include respond-to(md){
+                    width: 255px;
+                }
+
+                @include respond-to(lg) {
+                    width: 272px;
+                }
+
+                @include respond-to(xl) {
+                    width: 338px;
+                }
+            }
+
+            a, span {
+                font-size: 16px;
+
+                @include respond-to(md) {
+                    font-size: 15px;
+                }
+
+                @include respond-to(lg) {
+                    font-size: 16px;
+                }
+            }
+
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        
+        &__nav {
+            @include respond-to(md){ 
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                padding-top: 10px;
+            }
+
+
+
+
+            div {
+                &:not(:last-child) {
+                    margin-bottom: 60px;
+
+                    @include respond-to(md){ 
+                        margin-bottom: 0px;
+                    }
+                }
+
+                list-style: none;
+                padding-left: 0;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+            
+                    li {
+                        display: inline;
+                        font-family: var(--themeFontFamilySecondary);
+
+                        &:not(:last-of-type) {
+                            margin-bottom: 16px;
+
+                            @include respond-to(md) {
+                                margin-bottom: 12px;
+                            }
+                        }
+
+                        a {
+                            text-decoration-color: transparent;
+                            font-weight: var(--themeTextWeight);
+                            color: var(--themeLinkTextColour);
+                            font-size: 18px;
+                            line-height: 18px;
+                            cursor: pointer;
+                                                    
+                            @include respond-to(md) {
+                                font-size: 15px;
+                            }
+
+                            @include respond-to(lg) {
+                                font-size: 16px;
+                            }
+                            
+                            &:hover {
+                                text-decoration-color: var(--themeLinkTextColour);
+                                text-decoration: underline;
+                                text-underline-offset: 6px;
+                                text-decoration-thickness: 1px;
+                            }
+
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
